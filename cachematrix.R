@@ -5,7 +5,10 @@
 ## 2) For computing inverse of matrix initiated above as 'x' 
 ## --> --> --> eg: use as : cacheSolve(x) --> -->to get the inverse
 
+
 ## This function is used to prepare a matirx for computing inverse
+## The function gets the arguemnt as the matrix to be prepared for computing inverse
+
 makeCacheMatrix <- function(matrix_input = matrix()) {
   
   inverse <- NULL
@@ -22,6 +25,9 @@ makeCacheMatrix <- function(matrix_input = matrix()) {
 
 
 ## This function calculates the inverse if the inverse is not present in cache
+## To apply his function for matrix computation, the matrix should be passed through the function above
+## make an object from the above function and pass it to the 'cacheSolve' arguement
+
 cacheSolve <- function(x, ...) {
 
   inverse <- x$get_inverse()
@@ -34,7 +40,7 @@ cacheSolve <- function(x, ...) {
     inverse <- solve(GivenMatrix,...)
     x$set_inverse(inverse)
     inverse
-    ## 'inverse' Returns a matrix that is the inverse of 'x'
+    ## 'inverse' Returns a matrix that is the inverse of 'x' obtained from function makeCacheMatrix
   }
   
 }
